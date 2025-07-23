@@ -100,3 +100,20 @@ document.getElementById('resetForm')?.addEventListener('click', function (event)
   event.preventDefault();
   document.getElementById('signupForm').reset();
 });
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // stop default form action
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Check credentials from localStorage (if SignUp stores them there)
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const user = users.find(u => u.email === email && u.password === password);
+
+  if (user) {
+    // ✅ Redirect to home page
+    window.location.href = '../Home/home.html'; // use correct path & case
+  } else {
+    document.getElementById('email-error').textContent = "Invalid email or password";
+  }
+});
