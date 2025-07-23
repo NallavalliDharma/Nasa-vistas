@@ -7,13 +7,13 @@
   <title>Feedback form - NASA Vistas</title>
   <link rel="stylesheet" href="feedback.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/png" href="/utils/logo.png">
+  <link rel="icon" type="image/png" href="/Utils/logo.png">
 
 </head>
 
 <body>
   <video autoplay muted loop id="myVideo">
-    <source src="/utils/bg.mp4" type="video/mp4">
+    <source src="/Utils/bg.mp4" type="video/mp4">
   </video>
 
   <!--Navbar-->
@@ -25,7 +25,7 @@
     </div>
     <a href="/Home/home.html" style="color:#34c5ee; text-decoration: none;">
       <div class="logo">
-        <img src="/utils/logo.png" alt="NASA Logo">
+        <img src="/Utils/logo.png" alt="NASA Logo">
         NASA Vistas
       </div>
     </a>
@@ -34,7 +34,7 @@
       <a href="/Favorites/favorites.html">Favourites</a>
       <a href="/Images/images.html">Images</a>
       <a href="/FeedBack/feedback.html">Feedback</a>
-      <a href="/ContactUs/contactUs.html">Contact us</a>
+      <a href="/ContactUs/contactUs.html">Contact Me</a>
 
 
     </div>
@@ -112,38 +112,38 @@
   <i class="fa fa-star-o" aria-hidden="true"></i>
 
   </div>
-  <script>
-  const form = document.getElementById('feedback-form');
-  const thankYouMessage = document.getElementById('thank-you-message');
+    <script>
+    const form = document.getElementById('feedback-form');
+    const thankYouMessage = document.getElementById('thank-you-message');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    const formData = new FormData(form);
-    fetch('https://formsubmit.co/ajax/nallavallidharma@gmail.com', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-        form.style.display = 'none';
-        thankYouMessage.style.display = 'block';
+      const formData = new FormData(form);
+      fetch('https://formsubmit.co/ajax/nallavallidharma@gmail.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          thankYouMessage.style.display = 'block';
 
-        // Redirect to home after 3 seconds
-        setTimeout(() => {
-          window.location.href = "/Home/home.html";
-        }, 3000);
-      } else {
-        alert('Submission failed. Please try again.');
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      alert('There was a problem submitting your feedback.');
+          // Redirect to home after 3 seconds
+          setTimeout(() => {
+            window.location.href = "/Home/home.html";
+          }, 3000);
+        } else {
+          alert('Submission failed. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert('There was a problem submitting your feedback.');
+      });
     });
-  });
-</script>
+  </script>
 
 
   <script src="/hamburgerScript.js"></script>

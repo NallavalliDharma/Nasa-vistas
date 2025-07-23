@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up - NASA's Lens</title>
-  <link rel="shortcut icon" type="x-icon" href="/utils/logo.png">
+  <title>Sign Up - NASA Vistas</title>
+  <link rel="shortcut icon" type="x-icon" href="/Utils/logo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="page-signup">
   <div>
     <video autoplay muted loop id="myVideo">
-      <source src="/utils/bg.mp4" type="video/mp4">
+      <source src="/Utils/bg.mp4" type="video/mp4">
     </video>
   </div>
 
   <div class="navbar">
     <div class="logo">
-      <img src="/utils/logo.png" alt="">
-      <a href="/index.html" style="text-decoration: none;">NASA's Lens</a>
+      <img src="/Utils/logo.png" alt="">
+      <a href="/index.html" style="text-decoration: none;">NASA Vistas</a>
     </div>
     <div class="navbar-right">
       <a href="login.html"><button>Log in</button></a>
@@ -26,7 +28,7 @@
 
   <div class="container">
     <h2>Sign Up</h2>
-    <form id="signupForm" action="javascript:void(0);">
+    <form id="signupForm" action="/Home/home.html">
       <label for="firstname">First Name</label>
       <input type="text" id="firstname" name="firstname" placeholder="Enter your firstname" required>
       <span id="firstname-error" class="error-message"></span>
@@ -60,6 +62,8 @@
     </form>
   </div>
 
+  
   <script src="script.js"></script>
 </body>
+
 </html>
