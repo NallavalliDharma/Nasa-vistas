@@ -172,3 +172,22 @@ loadBtn.addEventListener("click", getNasaPics);
 
 //On Load Call getNasaPics
 getNasaPics();
+
+// script.js
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent form from submitting the traditional way
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Check login details
+  const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+  const user = storedUsers.find(u => u.email === email && u.password === password);
+
+  if (user) {
+    // Redirect to home page
+    window.location.href = '../Home/home.html';  // 🔁 Make sure this path is correct
+  } else {
+    alert('Invalid email or password');
+  }
+});
