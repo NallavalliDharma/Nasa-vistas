@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Home page
+
+  </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/Utils/logo.png">
+  <link rel="stylesheet" href="/hamburger.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="/Utils/bg.mp4" type="video/mp4">
+  </video>
+
+  <!--Navbar-->
+  <div class="navbar">
+    <div class="hamburger">
+      <button id="hamburger-toggle" class="ham"><i class="fa-solid fa-bars"></i></button>
+
+    </div>
+    <a href="/Home/home.html" style="color:#34c5ee; text-decoration: none;">
+      <div class="logo">
+        <img src="/Utils/logo.png" alt="NASA Logo">
+        NASA Vistas
+      </div>
+    </a>
+
+    <div class="navbar-right nav-toggle">
+      <a href="/Favorites/favorites.html">Favourites</a>
+      <a href="/Images/images.html">Images</a>
+      <a href="/FeedBack/feedback.html">Feedback</a>
+      <a href="/ContactUs/contactUs.html">Contact Me</a>
+
+
+    </div>
+
+
+    <div class="logout-button">
+      <a href="/index.html"><button style="background-color: red;">Log out</button></a>
+    </div>
+  </div>
+
+
+  <div id="hamId" class="navbar-right hamnav" style="display: none;">
+    <ul>
+      <li>
+        <a href="/Favorites/favorites.html">Favourites</a>
+
+      </li>
+      <li>
+        <a href="/Images/images.html">Images</a>
+
+      </li>
+      <li>
+        <a href="/FeedBack/feedback.html">Feedback</a>
+
+      </li>
+      <li> <a href="/ContactUs/contactUs.html">Contact Me</a>
+      </li>
+
+    </ul>
+
+
+  </div>
+
+  <!-- Loader -->
+  <div class="loader hidden">
+    <img src="/Home/rocket.svg" alt="loading">
+  </div>
+
+
+  <div class="content">
+    <div class="contact-get-in-touch">
+      <div class="contact-us" id="contactus">
+        <h2>Contact Me</h2>
+        <p class="center-text">
+          <span class="my-name">Nallavalli Dharma Tej</span> <br>
+          NIT PUDUCHERRY <br>
+          karaikal-609609<br>
+          PUDUCHERRY<br>
+          <span>&#9993;</span> <a href="nallavallidharma@gmail.com">nallavallidharma@gmail.com</a>
+        </p>
+        <p class="center-text">Phone: 9059048341</p>
+        <div class="social-icons">
+
+          <i class="fa fa-whatsapp" style="font-size:26px; margin-right: 20px;"></i>
+
+          <i class='fab fa-github' style='font-size:26px;color:white; margin-right:20px;'></i>
+          <i class="fa fa-linkedin-square" style="font-size:26px"></i>
+        </div>
+      </div>
+      <div class="get-in-touch">
+        <h2>Get in Touch</h2>
+        <form action="/Home/home.html">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+
+          <button type="submit" class="center-button" style="text-decoration: none;">Send Message</button>
+        </form>
+      </div>
+    </div>
+    <div class="location">
+      <h2>My Location - NIT PUDUCHERRY</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.7069906243682!2d79.84267777504493!3d10.985474889176258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a55112c91a20079%3A0xee7677dfa4776c23!2sNational%20Institute%20of%20Technology%20Puducherry!5e0!3m2!1sen!2sin!4v1753243199326!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+      </iframe>
+    </div>
+  </div>
+
+  <script src="/hamburgerScrip.js"></script>
+
+
+</body>
+
+</html>

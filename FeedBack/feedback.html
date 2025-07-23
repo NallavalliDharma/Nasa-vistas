@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback form - NASA Vistas</title>
+  <link rel="stylesheet" href="feedback.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/png" href="/Utils/logo.png">
+
+</head>
+
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="/Utils/bg.mp4" type="video/mp4">
+  </video>
+
+  <!--Navbar-->
+
+  <div class="navbar">
+    <div class="hamburger">
+      <button id="hamburger-toggle" class="ham"><i class="fa-solid fa-bars"></i></button>
+
+    </div>
+    <a href="/Home/home.html" style="color:#34c5ee; text-decoration: none;">
+      <div class="logo">
+        <img src="/Utils/logo.png" alt="NASA Logo">
+        NASA Vistas
+      </div>
+    </a>
+
+    <div class="navbar-right nav-toggle">
+      <a href="/Favorites/favorites.html">Favourites</a>
+      <a href="/Images/images.html">Images</a>
+      <a href="/FeedBack/feedback.html">Feedback</a>
+      <a href="/ContactUs/contactUs.html">Contact us</a>
+
+
+    </div>
+
+
+    <div class="logout-button">
+      <a href="/index.html"><button style="background-color: red;">Log out</button></a>
+    </div>
+  </div>
+
+  <div id="hamId" class="navbar-right hamnav " style="display: none;">
+    <ul>
+      <li>
+        <a href="/Favorites/favorites.html">Favourites</a>
+
+      </li>
+      <li>
+        <a href="/Images/images.html">Images</a>
+
+      </li>
+      <li>
+        <a href="/FeedBack/feedback.html">Feedback</a>
+
+      </li>
+      <li> <a href="/ContactUs/contactUs.html">Contact us</a>
+      </li>
+
+    </ul>
+
+
+  </div>
+
+  <div class="container page-Feedback">
+    <h2>Feedback</h2>
+      <!-- ✅ Changes Made:
+      1. Changed form `action` to use FormSubmit
+      2. Added hidden inputs for customization (_subject, _next, _captcha, etc.)
+      3. Matched all input `name` attributes for proper email formatting -->
+
+      <form id="feedback-form">
+        <label for="Name">Name</label>
+        <input type="text" id="Name" name="Name" placeholder="Enter your name" required>
+
+        <label for="Email">Email</label>
+        <input type="email" id="Email" name="Email" placeholder="Enter your mail id" required>
+
+        <label for="rating">Rating </label>
+        <div class="stars">
+          <input type="radio" id="star5" name="Rating" value="5">
+          <label for="star5">★</label>
+          <input type="radio" id="star4" name="Rating" value="4">
+          <label for="star4">★</label>
+          <input type="radio" id="star3" name="Rating" value="3">
+          <label for="star3">★</label>
+          <input type="radio" id="star2" name="Rating" value="2">
+          <label for="star2">★</label>
+          <input type="radio" id="star1" name="Rating" value="1">
+          <label for="star1">★</label>
+        </div>
+
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="Comments" rows="4" placeholder="Your feedback..." required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- ✅ Thank-you message (initially hidden) -->
+      <p id="thank-you-message" style="display: none; color: #00ff88; font-size: 18px; text-align:center; margin-top:20px;">
+        Thank you for your feedback! Redirecting to home...
+      </p>
+
+
+  </div>
+
+  <i class="fa fa-star-o" aria-hidden="true"></i>
+
+  </div>
+  <script>
+  const form = document.getElementById('feedback-form');
+  const thankYouMessage = document.getElementById('thank-you-message');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    fetch('https://formsubmit.co/ajax/nallavallidharma@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        form.style.display = 'none';
+        thankYouMessage.style.display = 'block';
+
+        // Redirect to home after 3 seconds
+        setTimeout(() => {
+          window.location.href = "/Home/home.html";
+        }, 3000);
+      } else {
+        alert('Submission failed. Please try again.');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      alert('There was a problem submitting your feedback.');
+    });
+  });
+</script>
+
+
+  <script src="/hamburgerScrip.js"></script>
+
+</body>
+
+</html>
